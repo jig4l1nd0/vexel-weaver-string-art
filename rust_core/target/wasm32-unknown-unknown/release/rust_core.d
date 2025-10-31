@@ -1,0 +1,1 @@
+/Users/mi30737/Documents/Personal/vexel-weaver-string-art/rust_core/target/wasm32-unknown-unknown/release/rust_core.wasm: /Users/mi30737/Documents/Personal/vexel-weaver-string-art/rust_core/src/lib.rs
