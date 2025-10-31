@@ -7,7 +7,14 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+# dependencies for the webapp connection
 wasm-bindgen = "0.2"
 serde = { version = "1.0", features = ["derive"] }
 serde-wasm-bindgen = "0.6"
 getrandom = { version = "0.2", features = ["js"] }
+# dependencies for image loading and processing
+image = { version = "0.24", default-features = false, features = ["png", "jpeg"] }
+# dependencies for the algorithm
+line_drawing = "1.0.0"
+lazy_static = "1.4.0"
+parking_lot = "0.12.1"

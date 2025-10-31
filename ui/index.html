@@ -2,17 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Artifilum</title>
+    <title>Vexel Weaver : String Art</title>
     <style>
-        /* Add a simple border to see the canvas area */
-        canvas {
-            border: 1px solid black;
+        body { font-family: sans-serif; padding: 1em; }
+        .canvas-container { 
+            display: flex; 
+            gap: 20px; 
+            margin-top: 20px; 
+            justify-content: center; /* Centrar los contenedores */
         }
+        canvas { 
+            border: 1px solid black; 
+            background-color: #f0f0f0; /* Un fondo gris claro para que se vea bien */
+        }
+        div { margin-bottom: 10px; }
+        /* Añadir un estilo para el cursor de arrastre */
+        .grabbing { cursor: grabbing; } 
     </style>
 </head>
 <body>
-    <h1>Pin Layout</h1>
-    <canvas id="art-canvas" width="500" height="500"></canvas>
+    <h1>Vexel Weaver : String Art</h1>
+    
+    <div>
+        <label for="image-upload">1. Upload Image:</label>
+        <input type="file" id="image-upload" accept="image/png, image/jpeg">
+        <span id="upload-status"></span> </div>
+
+    <div>
+        <label for="num-lines">2. Number of Lines:</label>
+        <input type="number" id="num-lines" value="2000">
+    </div>
+
+    <div>
+        <label for="num-pins">Number of Pins:</label>
+        <input type="number" id="num-pins" value="200">
+    </div>
+
+    <div>
+        <label for="shape-select">Frame Shape:</label>
+        <select id="shape-select">
+            <option value="circle">Circle</option>
+            <option value="square">Square</option>
+        </select>
+    </div>
+
+    <div>
+        <button id="generate-button" disabled>3. Generate Art</button>
+        <button id="reset-view-button" disabled>Reset View</button> </div>
+
+    <div class="canvas-container">
+        <div style="text-align: center;">
+            <h3>Image Preview (Scroll & Drag)</h3>
+            <canvas id="preview-canvas" width="500" height="500"></canvas>
+        </div>
+        <div style="text-align: center;">
+            <h3>String Art Result</h3>
+            <canvas id="art-canvas" width="500" height="500"></canvas>
+        </div>
+    </div>
     <script type="module" src="main.js"></script>
 </body>
 </html>
